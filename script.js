@@ -1,4 +1,4 @@
-let canvas = document.getElementById("snake");
+let canvas = document.getElementById("stage");
 let context = canvas.getContext("2d");
 let box = 32;
 let snake = [];
@@ -6,6 +6,9 @@ snake[0] = {
     X: 8 * box,
     y: 8 * box
 }
+
+let direction = "right";
+
 
 function criarBG() {
     context.fillStyle = "lightgreen";
@@ -19,5 +22,14 @@ function criarCobrinha(){
     }
 }
 
-criarBG();
-criarCobrinha();
+function iniciarJogo() {
+    criarBG();
+    criarCobrinha();
+
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
+}
+
+let jogo = setInterval(iniciarJogo, 100);
+
+
